@@ -133,6 +133,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     MotoDoze
 
+# CM/MotoActions
+PRODUCT_PACKAGES += \
+    MotoActions
+
 # FM Radio
 PRODUCT_PACKAGES += \
     EngineerMode
