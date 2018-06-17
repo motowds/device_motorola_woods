@@ -302,19 +302,13 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Properties
 PRODUCT_PROPERTY_OVERRIDES += \
-	ro.hw.gyroscope=false \
-	persist.radio.apn_delay=5000 \
-	persist.sys.media.use-awesome=false \
-	media.stagefright.use-awesome=false
+    ro.hw.gyroscope=false \
+    persist.radio.apn_delay=5000 \
+    persist.sys.media.use-awesome=false \
+    media.stagefright.use-awesome=false
 
-# Keyhandler package
-PRODUCT_PACKAGES += \
-    com.cyanogenmod.keyhandler
-
-PRODUCT_SYSTEM_SERVER_JARS += com.cyanogenmod.keyhandler
-
-# Never dexopt the keyhandler
-$(call add-product-dex-preopt-module-config,com.cyanogenmod.keyhandler,disable)
+#
+PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 
 ###########################################################################
 # ro.boot.optxxxx for telephnoy
@@ -327,4 +321,16 @@ PRODUCT_PACKAGES += \
     libmtk_omx_shim \
     libmtk_camera \
     libmtk_log_shim \
-		mtk_symbols
+    mtk_symbols
+
+
+# Never dexopt the keyhandler
+#$(call add-product-dex-preopt-module-config,com.cyanogenmod.keyhandler,disable)
+
+# Keyhandler package
+#PRODUCT_PACKAGES += \
+    #com.cyanogenmod.keyhandler
+
+#PRODUCT_SYSTEM_SERVER_JARS += com.cyanogenmod.keyhandler
+
+
