@@ -326,4 +326,5 @@ PRODUCT_PACKAGES += \
     libmtk_ril_shim \
     libmtk_omx_shim \
     libmtk_camera \
-    libmtk_log_shim
+    libmtk_log_shim \
+		mtk_symbols
