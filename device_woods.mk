@@ -260,14 +260,32 @@ PRODUCT_PACKAGES += \
     libui_ext
 
 # Disable adb security
+# default.prop
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-	ro.mount.fs=EXT4 \
-	ro.allow.mock.location=0 \
-	ro.debuggable=1 \
-	ro.config.low_ram=false \
-  camera.disable_zsl_mode=1 \
-  ro.adb.secure=0 \
-  ro.secure=0
+    camera.disable_zsl_mode=1 \
+    persist.service.acm.enable=0 \
+    persist.sys.usb.config=mtp,adb \
+    ro.config.low_ram=false \
+    ro.dalvik.vm.native.bridge=0 \
+    ro.mount.fs=EXT4 \
+    ro.secure=0 \
+    ro.allow.mock.location=1 \
+    ro.debuggable=1 \
+    ro.adb.secure=0
+
+# build.prop
+PRODUCT_PROPERTY_OVERRIDES += \
+    media.stagefright.legacyencoder=true \
+    media.stagefright.less-secure=true \
+    persist.media.treble_omx=false \
+    persist.service.adb.enable=1 \
+    persist.service.debuggable=1 \
+    persist.sys.root_access=0
+
+# extra log controls prop
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.ril.log=0 \
+    ro.disable.xlog=0
 
 # IO Scheduler
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -283,9 +301,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	persist.radio.apn_delay=5000 \
 	persist.sys.media.use-awesome=false \
 	media.stagefright.use-awesome=false
-
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-	persist.sys.usb.config=mtp
 
 # Keyhandler package
 PRODUCT_PACKAGES += \
