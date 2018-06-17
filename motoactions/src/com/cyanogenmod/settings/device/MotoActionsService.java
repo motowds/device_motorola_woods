@@ -70,7 +70,7 @@ public class MotoActionsService extends IntentService implements ScreenStateNoti
 
         mPowerManager = (PowerManager) context.getSystemService(Context.POWER_SERVICE);
         mWakeLock = mPowerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "MotoActionsWakeLock");
-        updateState();
+        notifier.updateState();
     }
 
     @Override
