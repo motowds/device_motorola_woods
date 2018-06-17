@@ -62,7 +62,7 @@ public class MotoActionsService extends IntentService implements ScreenStateNoti
         mScreenStateNotifiers.add(new StowSensor(motoActionsSettings, mSensorHelper, mDozePulseAction));
 
         // Other actions that are always enabled
-        mUpdatedStateNotifiers.add(new CameraActivationSensor(motoActionsSettings, mSensorHelper));
+        //mUpdatedStateNotifiers.add(new CameraActivationSensor(motoActionsSettings, mSensorHelper));
         mUpdatedStateNotifiers.add(new ChopChopSensor(motoActionsSettings, mSensorHelper));
         mUpdatedStateNotifiers.add(new ProximitySilencer(motoActionsSettings, context, mSensorHelper));
         mUpdatedStateNotifiers.add(new FlipToMute(motoActionsSettings, context, mSensorHelper));
