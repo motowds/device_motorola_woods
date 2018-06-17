@@ -63,14 +63,14 @@ public class MotoActionsService extends IntentService implements ScreenStateNoti
 
         // Other actions that are always enabled
         //mUpdatedStateNotifiers.add(new CameraActivationSensor(motoActionsSettings, mSensorHelper));
-        mUpdatedStateNotifiers.add(new ChopChopSensor(motoActionsSettings, mSensorHelper));
+        //mUpdatedStateNotifiers.add(new ChopChopSensor(motoActionsSettings, mSensorHelper));
         mUpdatedStateNotifiers.add(new ProximitySilencer(motoActionsSettings, context, mSensorHelper));
         mUpdatedStateNotifiers.add(new FlipToMute(motoActionsSettings, context, mSensorHelper));
         mUpdatedStateNotifiers.add(new LiftToSilence(motoActionsSettings, context, mSensorHelper));
 
         mPowerManager = (PowerManager) context.getSystemService(Context.POWER_SERVICE);
         mWakeLock = mPowerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "MotoActionsWakeLock");
-        notifier.updateState();
+        updateState();
     }
 
     @Override
