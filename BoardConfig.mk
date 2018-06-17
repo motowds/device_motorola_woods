@@ -161,6 +161,8 @@ BOARD_HARDWARE_CLASS += $(DEVICE_PATH)/lineagehw
 # Charger
 BACKLIGHT_PATH := /sys/class/leds/lcd-backlight/brightness
 
+MALLOC_SVELTE := true
+
 # RIL
 BOARD_RIL_CLASS := ../../../$(DEVICE_PATH)/ril/
 BOARD_PROVIDES_RILD := true
