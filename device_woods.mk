@@ -13,12 +13,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+#local_path
+LOCAL_PATH := device/motorola/woods
+
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/go_defaults.mk)
 
-LOCAL_PATH := device/motorola/woods
+#enable Android Go
+$(call inherit-product, $(SRC_TARGET_DIR)/product/go_defaults.mk)
 
 $(call inherit-product-if-exists, vendor/motorola/woods/woods-vendor.mk)
 
@@ -158,7 +161,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libnl_2 \
     charger_res_images \
-    libion
+    libion \
+		libcurl
 
 # Storage
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -245,7 +249,8 @@ PRODUCT_PACKAGES += \
 
 # Power HAL
 PRODUCT_PACKAGES += \
-    android.hardware.power@1.0-impl
+    android.hardware.power@1.0-impl \
+		android.hardware.Power@1.0-service
 
 # Graphic HAL
 PRODUCT_PACKAGES += \
