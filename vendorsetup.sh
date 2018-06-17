@@ -1,6 +1,6 @@
 #
 for var in eng user userdebug; do
-  add_lunch_combo lineage_woods-$var
+  add_lunch_combo xenonhd_woods-$var
 done
 
 # Patches
@@ -23,8 +23,9 @@ cd ../..
 echo " PATCH DONE !!!"
 
 echo
-echo " ....! adding 'devicesettings' for Doze "
+echo " ....! adding 'devicesettings' for Doze & MotoActions"
 echo " You may have to press Enter Key ! to begin"
+echo " Only enable if u are not syncing with woods local manifest ..."
 #git clone https://github.com/iykequame/android_packages_resources_devicesettings.git -b cm-14.1 packages/resources/devicesettings  
 echo
 echo " All Set Now !"
