@@ -8,7 +8,9 @@ ro.board.platform=mt6737m
 ro.sf.lcd_density=320
 persist.sys.lcd_density=320
 
+# OpenGLES
 ro.opengles.version=196610
+ro.kernel.qemu.gles=0
 
 # USB MTP WHQL
 ro.sys.usb.mtp.whql.enable=0
