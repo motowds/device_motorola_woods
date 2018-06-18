@@ -13,8 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-#local_path
-LOCAL_PATH := device/motorola/woods
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core.mk)
@@ -24,6 +22,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/go_defaults.mk)
 
 $(call inherit-product-if-exists, vendor/motorola/woods/woods-vendor.mk)
+
+#local_path
+LOCAL_PATH := device/motorola/woods
 
 DEVICE_PACKAGE_OVERLAYS += device/motorola/woods/overlay
 PRODUCT_PACKAGE_OVERLAYS += device/motorola/woods/overlay # enable this to be able overlay a default wallpaper
