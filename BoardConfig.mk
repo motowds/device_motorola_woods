@@ -167,7 +167,7 @@ MALLOC_SVELTE := true
 BOARD_RIL_CLASS := ../../../$(DEVICE_PATH)/ril/
 BOARD_PROVIDES_RILD := true
 SIM_COUNT := 2
-PRODUCT_PROPERTY_OVERRIDES += ro.telephony.sim.count=$(SIM_COUNT)
+#PRODUCT_PROPERTY_OVERRIDES += ro.telephony.sim.count=$(SIM_COUNT)
 
 # GPS
 BOARD_GPS_LIBRARIES :=true
