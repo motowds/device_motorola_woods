@@ -100,7 +100,6 @@ PRODUCT_COPY_FILES += \
 # Camera permissions from Motorola
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/MotoConfig/permissions/com.motorola.camera.xml:system/etc/permissions/com.motorola.camera.xml \
-    $(LOCAL_PATH)/MotoConfig/permissions/com.motorola.motosignature.xml:system/etc/permissions/com.motorola.motosignature.xml \
     $(LOCAL_PATH)/MotoConfig/permissions/com.motorola.cameraone.xml:system/etc/permissions/com.motorola.cameraone.xml
 
 # Seccomp policy
