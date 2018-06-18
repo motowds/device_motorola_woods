@@ -194,10 +194,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     Snap
 
-# CM14 mtk symbols
-PRODUCT_PACKAGES += \
-    mtk_symbols
-
 # Fingerprint HAL & pack
 PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.1-service \
@@ -332,5 +328,3 @@ PRODUCT_PACKAGES += \
     #com.cyanogenmod.keyhandler
 
 #PRODUCT_SYSTEM_SERVER_JARS += com.cyanogenmod.keyhandler
-
-
