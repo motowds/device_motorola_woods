@@ -13,10 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
- #include <pthread.h>
 
-/* status_t Parcel::writeString16 */
-//extern "C" bool _ZNK7android12IMediaSource11ReadOptions9getSeekToEPxPNS1_8SeekModeE();
-extern "C" long SSL_CTX_ctrl() {
-  return 1;
-}
+#include <string>
+
+extern "C" void _ZN7android13GraphicBufferC1EjjijjP13native_handleb() {}
+extern "C" void _ZNK7android16SensorEventQueue12enableSensorEPKNS_6SensorE() {}

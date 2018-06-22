@@ -4,7 +4,8 @@
 #
 # =============================================================================
 
-LOCAL_PATH := $(call my-dir)
+#LOCAL_PATH := $(call my-dir)
+LOCAL_PATH := device/motorola/woods
 
 include $(CLEAR_VARS)
 
@@ -22,7 +23,7 @@ LOCAL_CPPFLAGS += -fpermissive -Wall -Werror -D__STDC_LIMIT_MACROS
 LOCAL_SRC_FILES := $(call all-c-files-under,src) $(call all-cpp-files-under,src)
 
 LOCAL_C_INCLUDES := \
-    $(LOCAL_PATH)/gatekeeper/include \
+    $(LOCAL_PATH)/MediaTek/gatekeeper/include \
     external/scrypt/lib/crypto
     #$(ANDROID_BUILD_TOP)/system/gatekeeper/include/gatekeeper
 
