@@ -1,6 +1,7 @@
 # Oinc_:( :0
 
-LOCAL_PATH := $(call my-dir)
+#LOCAL_PATH := $(call my-dir)
+LOCAL_PATH := device/motorola/woods
 
 #mtk_bionic
 include $(CLEAR_VARS)

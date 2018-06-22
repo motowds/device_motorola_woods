@@ -33,7 +33,8 @@
 # applicable license agreements with MediaTek Inc.
 
 
-LOCAL_PATH:= $(call my-dir)
+#LOCAL_PATH := $(call my-dir)
+LOCAL_PATH := device/motorola/woods
 
 
 #
