@@ -313,12 +313,14 @@ PRODUCT_PROPERTY_OVERRIDES += ro.boot.opt_using_default=1
 
 #shim
 PRODUCT_PACKAGES += \
-    libmtk_ril_shim \
-    libmtk_omx_shim \
-    libmtk_camera \
-    libmtk_log_shim \
-    mtk_symbols
+    libshim_ril \
+    libshim_camera \
+    libshim_bionic \
+    libshim_atomic \
+    libxlog
 
+		PRODUCT_COPY_FILES += \
+		     $(LOCAL_PATH)/configs/sensors/_hals.conf:system/vendor/etc/sensors/_hals.conf
 
 # Never dexopt the keyhandler
 #$(call add-product-dex-preopt-module-config,com.cyanogenmod.keyhandler,disable)

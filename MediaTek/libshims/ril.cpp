@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016 The CyanogenMod Project
+ * Copyright (C) 2015 The CyanogenMod Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,7 +14,11 @@
  * limitations under the License.
  */
 
-#include <string>
+extern "C" void RIL_register_socket() {}
 
-extern "C" void _ZN7android13GraphicBufferC1EjjijjP13native_handleb() {}
-extern "C" void _ZNK7android16SensorEventQueue12enableSensorEPKNS_6SensorE() {}
+/* status_t Parcel::writeString16 */
+extern "C" int _ZN7android6Parcel13writeString16EPKDsj();
+extern "C" int _ZN7android6Parcel13writeString16EPKtj() {
+    return _ZN7android6Parcel13writeString16EPKDsj();
+}
+
