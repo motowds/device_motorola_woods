@@ -148,7 +148,7 @@ MTK_GPU_VERSION := mali midgard r12p1
 OVERRIDE_RS_DRIVER := libRSDriver_mtk.so
 
 # SW Gatekeeper
-BOARD_USE_SOFT_GATEKEEPER := true
+#BOARD_USE_SOFT_GATEKEEPER := true
 
 # Mediatek support
 BOARD_USES_MTK_HARDWARE := true
