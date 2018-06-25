@@ -108,14 +108,14 @@ BOARD_GLOBAL_CFLAGS += -DNO_SECURE_DISCARD
 BOARD_GLOBAL_CFLAGS += -DDISABLE_HW_ID_MATCH_CHECK
 
 # Enable dexpreopt to speed boot time
-ifeq ($(HOST_OS),linux)
-  ifneq ($(TARGET_BUILD_VARIANT),eng)
-    ifeq ($(WITH_DEXPREOPT),)
-      WITH_DEXPREOPT := true
-      WITH_DEXPREOPT_BOOT_IMG_AND_SYSTEM_SERVER_ONLY := true
-    endif
-  endif
-endif
+#ifeq ($(HOST_OS),linux)
+  #ifneq ($(TARGET_BUILD_VARIANT),eng)
+    #ifeq ($(WITH_DEXPREOPT),)
+      #WITH_DEXPREOPT := true
+      #WITH_DEXPREOPT_BOOT_IMG_AND_SYSTEM_SERVER_ONLY := true
+    #endif
+  #endif
+#endif
 
 # Charger
 WITH_LINEAGE_CHARGER := false
@@ -126,8 +126,15 @@ SUPPRESS_MTK_AUDIO_BLOB_ERR_MSG := true
 # SensorHAL
 TARGET_SENSORS_DEVICE_API_VERSION := SENSORS_DEVICE_API_VERSION_1_0
 
+# Deodex
+WITH_DEXPREOPT := false
+DISABLE_DEXPREOPT := true
+
 # OpenGL
 USE_OPENGL_RENDERER := true
+
+# Use half res bootanimation to speed up first boot sequence
+TARGET_BOOTANIMATION_HALF_RES := true
 
 # Display
 BOARD_EGL_CFG := $(VENDOR_PATH)/vendor/lib/egl/egl.cfg
@@ -150,6 +157,8 @@ BOARD_USES_MTK_AUDIO := true
 
 # Camera
 USE_CAMERA_STUB := true
+TARGET_HAS_LEGACY_CAMERA_HAL1 := true
+
 
 # Boot animation
 TARGET_BOOTANIMATION_MULTITHREAD_DECODE := true
@@ -161,37 +170,42 @@ BOARD_HARDWARE_CLASS += $(DEVICE_PATH)/lineagehw
 # Charger
 BACKLIGHT_PATH := /sys/class/leds/lcd-backlight/brightness
 
-MALLOC_SVELTE := true
-
 # RIL
 BOARD_RIL_CLASS := ../../../$(DEVICE_PATH)/ril/
 BOARD_PROVIDES_RILD := true
-#SIM_COUNT := 2
-#PRODUCT_PROPERTY_OVERRIDES += ro.telephony.sim.count=$(SIM_COUNT)
+SIM_COUNT := 2
+MALLOC_SVELTE := true
 
 # GPS
 BOARD_GPS_LIBRARIES :=true
 BOARD_CONNECTIVITY_MODULE := MT6627
 BOARD_MEDIATEK_USES_GPS := true
 
-# WiFi
-BOARD_WLAN_DEVICE := MediaTek
-WPA_SUPPLICANT_VERSION := VER_0_8_X
-BOARD_HOSTAPD_DRIVER := NL80211
-BOARD_HOSTAPD_PRIVATE_LIB := lib_driver_cmd_mt66xx
-BOARD_WPA_SUPPLICANT_DRIVER := NL80211
+# FM
+MTK_FM_SUPPORT :=true
+MTK_FM_RX_SUPPORT :=true
+
+# MTK_WLAN_SUPPORT
+BOARD_WLAN_DEVICE                := MediaTek
+WPA_SUPPLICANT_VERSION           := VER_0_8_X
+BOARD_WPA_SUPPLICANT_DRIVER      := NL80211
 BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_mt66xx
-WIFI_DRIVER_FW_PATH_PARAM := /dev/wmtWifi
-WIFI_DRIVER_FW_PATH_AP := AP
+BOARD_HOSTAPD_DRIVER             := NL80211
+BOARD_HOSTAPD_PRIVATE_LIB        := lib_driver_cmd_mt66xx
+WIFI_DRIVER_FW_PATH_PARAM := "/dev/wmtWifi"
 WIFI_DRIVER_FW_PATH_STA := STA
+WIFI_DRIVER_FW_PATH_AP := AP
 WIFI_DRIVER_FW_PATH_P2P := P2P
 WIFI_DRIVER_STATE_CTRL_PARAM := /dev/wmtWifi
 WIFI_DRIVER_STATE_ON := 1
 WIFI_DRIVER_STATE_OFF := 0
 
+# NINJA is enabled for fasted building
+# Set 'false' to disable use NINJA
+USE_NINJA := true
+
 # Enable Minikin text layout engine (will be the default soon)
 USE_MINIKIN := true
-#MALLOC_IMPL := dlmalloc
 
 # Charger
 BOARD_CHARGER_SHOW_PERCENTAGE := true
@@ -201,9 +215,9 @@ EXTENDED_FONT_FOOTPRINT := true
 
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth
 BOARD_HAVE_BLUETOOTH_MTK := true
 BOARD_BLUETOOTH_DOES_NOT_USE_RFKILL := true
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(LOCAL_PATH)/bluetooth
 
 TARGET_LDPRELOAD += mtk_symbols.so
 
