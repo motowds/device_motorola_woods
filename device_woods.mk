@@ -288,7 +288,7 @@ PRODUCT_PACKAGES += \
 
 #_hals.conf
 PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/configs/sensors/_hals.conf:system/vendor/etc/sensors/_hals.conf
+	$(LOCAL_PATH)/config/sensors/_hals.conf:system/vendor/etc/sensors/_hals.conf
 
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 	persist.sys.usb.config=mtp
