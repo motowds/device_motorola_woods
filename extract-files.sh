@@ -51,7 +51,7 @@ function extract() {
     done
 }
 
-BASE=../../../vendor/$VENDOR/$DEVICE/proprietary
+BASE=../../../vendor/$VENDOR/$DEVICE/vendor
 rm -rf $BASE/*
 
 #extract ../../$VENDOR/$DEVICE/proprietary-files-mtk.txt $BASE
