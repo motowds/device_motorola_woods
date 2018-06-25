@@ -1,5 +1,5 @@
-#LOCAL_PATH := $(call my-dir)
-LOCAL_PATH := device/motorola/woods
+LOCAL_PATH := $(call my-dir)
+#LOCAL_PATH := device/motorola/woods
 
 include $(CLEAR_VARS)
 
@@ -9,8 +9,8 @@ LOCAL_SRC_FILES := \
 #	ge.c
 
 LOCAL_C_INCLUDES := \
-	device/motorola/woods/MediaTek/libgralloc_extra/include \
-	device/motorola/woods/MediaTek/libgralloc_extra/../include
+	device/motorola/woods/libgralloc_extra/include \
+	device/motorola/woods/libgralloc_extra/../include
 
 LOCAL_SHARED_LIBRARIES := \
     libhardware \
@@ -18,10 +18,10 @@ LOCAL_SHARED_LIBRARIES := \
     libutils \
     liblog \
     libion \
-	libged
+	  libged
 
 LOCAL_EXPORT_C_INCLUDE_DIRS := \
-	device/motorola/woods/MediaTek/libgralloc_extra/include \
+	device/motorola/woods/libgralloc_extra/include \
 
 LOCAL_C_INCLUDES += \
 	system/core/libion/include \
