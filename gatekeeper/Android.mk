@@ -4,8 +4,8 @@
 #
 # =============================================================================
 
-#LOCAL_PATH := $(call my-dir)
-LOCAL_PATH := device/motorola/woods
+LOCAL_PATH := $(call my-dir)
+#LOCAL_PATH := device/motorola/woods
 
 include $(CLEAR_VARS)
 
