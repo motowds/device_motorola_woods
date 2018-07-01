@@ -258,3 +258,6 @@ ALLOW_MISSING_DEPENDENCIES ?= true
 # force_Symbols
 LINKER_FORCED_SHIM_LIBS := /system/lib/libcam_utils.so|libshim_atomic.so
 LINKER_FORCED_SHIM_LIBS += /system/lib/librilmtk.so|libshim_ril.so
+
+# Thermal
+USE_DEVICE_SPECIFIC_THERMAL := true
