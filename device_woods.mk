@@ -222,10 +222,13 @@ PRODUCT_PACKAGES += \
     libgui_ext \
     libui_ext
 
-##
+# Filesystem management tools
 PRODUCT_PACKAGES += \
 	  setup_fs \
-		e2fsck
+		e2fsck \
+		fsck.f2fs \
+    mkfs.f2fs \
+    make_ext4fs
 
 # Disable adb & set other Properties
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES := \
