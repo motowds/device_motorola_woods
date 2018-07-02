@@ -128,9 +128,9 @@ PRODUCT_PACKAGES += \
     com.android.future.usb.accessory
 
 PRODUCT_PACKAGES += \
-		charger \
+    charger \
     charger_res_images \
-		libion \
+    libion \
     libnl_2
 
 # Storage
@@ -139,7 +139,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Bluetooth
 PRODUCT_PACKAGES += \
-		libbt-vendor \
+    libbt-vendor \
     android.hardware.bluetooth@1.0-impl \
     android.hardware.bluetooth@1.0-service
 
@@ -161,7 +161,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     Snap
 
-# CM14 mtk symbols
+# mtk symbols
 PRODUCT_PACKAGES += \
     mtk_symbols
 
@@ -224,9 +224,9 @@ PRODUCT_PACKAGES += \
 
 # Filesystem management tools
 PRODUCT_PACKAGES += \
-	  setup_fs \
-		e2fsck \
-		fsck.f2fs \
+    setup_fs \
+    e2fsck \
+    fsck.f2fs \
     mkfs.f2fs \
     make_ext4fs
 
@@ -256,11 +256,11 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
    pm.dexopt.boot=verify-at-runtime \
    pm.dexopt.install=interpret-only \
    pm.dexopt.bg-dexopt=speed-profile \
-	 pm.dexopt.ab-ota=speed-profile \
+   pm.dexopt.ab-ota=speed-profile \
    pm.dexopt.nsys-library=speed \
-	 pm.dexopt.shared-apk=speed \
-	 pm.dexopt.forced-dexopt=speed \
-	 pm.dexopt.core-app=speed
+   pm.dexopt.shared-apk=speed \
+   pm.dexopt.forced-dexopt=speed \
+   pm.dexopt.core-app=speed
 
 PRODUCT_PROPERTY_OVERRIDES += \
 	 dalvik.vm.dex2oat-filter=speed \
