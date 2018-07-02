@@ -139,6 +139,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Bluetooth
 PRODUCT_PACKAGES += \
+		libbt-vendor \
     android.hardware.bluetooth@1.0-impl \
     android.hardware.bluetooth@1.0-service
 
@@ -231,7 +232,8 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES := \
 	 ro.crypto.state=unencrypted \
 	 ro.config.low_ram=false \
 	 ro.mount.fs=EXT4 \
-	 ro.secure=1 \
+	 ro.secure=0 \
+	 ro.adb.secure=0 \
 	 ro.allow.mock.location=0 \
 	 ro.debuggable=1 \
 	 ro.zygote=zygote32 \
@@ -241,7 +243,10 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES := \
 	 dalvik.vm.image-dex2oat-Xms=64m \
 	 dalvik.vm.image-dex2oat-Xmx=64m \
 	 ro.dalvik.vm.native.bridge=0 \
-	 ro.telephony.ril_class=MT6735
+	 ro.telephony.ril_class=MT6735 \
+	 persist.sys.usb.config = mtp,adb \
+	 persist.service.adb.enable=1 \
+	 persist.service.debuggable=1
 
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
    pm.dexopt.first-boot=verify-at-runtime \
@@ -289,9 +294,6 @@ PRODUCT_PACKAGES += \
 #_hals.conf
 PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/config/sensors/_hals.conf:system/vendor/etc/sensors/_hals.conf
-
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-	persist.sys.usb.config=mtp
 
 # Keyhandler package
 PRODUCT_PACKAGES += \
