@@ -172,6 +172,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     power.mt6737m
 
+# Jelly
+PRODUCT_PACKAGES += \
+		Jelly
+
 # Vibrator
 PRODUCT_PACKAGES += \
     android.hardware.vibrator@1.0-impl \
